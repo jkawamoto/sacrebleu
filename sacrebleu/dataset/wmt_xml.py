@@ -26,10 +26,12 @@ class WMTXMLDataset(Dataset):
         This script is adapted from https://github.com/wmt-conference/wmt-format-tools
 
         :param raw_file: The raw xml file to unwrap.
-        :return: Dictionary which contains the following fields:
+        :return: Dictionary which contains the following fields
+            (each a list with values for each sentence):
             - `src`: The source sentences.
             - `docid`: ID indicating which document the sentences belong to.
             - `origlang`: The original language of the document.
+            - `domain`: Domain of the document.
             - `ref:{translator}`: The references produced by each translator.
             - `ref`: An alias for the references from the first translator.
         """
