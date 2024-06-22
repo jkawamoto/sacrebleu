@@ -113,7 +113,7 @@ class WMTXMLDataset(Dataset):
                 src_sent_count += 1
 
         data = {"src": src, **refs, "docid": docids, "origlang": orig_langs, **systems}
-        if len(domains):
+        if len(domains) == len(src):
             data["domain"] = domains
 
         return data
